@@ -1,0 +1,22 @@
+# Data Access Instructions
+
+The dataset used in this task is from the NCBI SRA:
+
+- Sample Accession: SRR11680207
+- Organism: Homo sapiens (human)
+- Experiment Type: Single-cell RNA sequencing (10x Genomics platform)
+
+## Download Instructions
+
+To download using `fastq-dl`:
+
+```
+fastq-dl SRR11680207 --provider ncbi --output-dir ./data
+```
+
+Alternatively, you can use SRA Toolkit:
+
+```
+prefetch SRR11680207
+fasterq-dump SRR11680207 -O ./data
+```

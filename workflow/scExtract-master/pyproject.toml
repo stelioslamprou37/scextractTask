@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools-scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scExtract"
+version = "0.2.0"
+description = "Automatically processing single-cell data from articles"
+readme = "README.md"
+authors = [
+    {name = "Yuxuan George Wu", email = "yxwucq@outlook.com"},
+]
+keywords = ["single-cell", "data-processing", "bioinformatics"]
+dependencies = [
+    "scanpy",
+    "openai>=1.17.0",
+    "defusedxml>=0.7.1",
+    "harmonypy>=0.0.9",
+    "networkx",
+    "oaklib",
+    "colorama",
+    "leidenalg",
+    "louvain",
+    "mygene",
+    "pyfiglet",
+    "pypdf",
+    "tabulate",
+    "termcolor",
+    "tqdm",
+    "anthropic>=0.25.1"
+]
+
+[project.optional-dependencies]
+external = ["singler>=0.4.1",
+    "celldex",
+    "singlecellexperiment>=0.4.4",
+    "celltypist",
+]
+gpu = ["cupy-cuda12x",
+    "pylibraft-cu11",
+]
+
+[project.scripts]
+scExtract = "scextract.main:main"
+
+[ project.urls ] 
+Repository = "https://github.com/yxwucq/scExtract.git" 
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["scextract*"]
+exclude = ["tests*"]

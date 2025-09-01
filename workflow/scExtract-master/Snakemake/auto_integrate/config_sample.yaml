@@ -1,0 +1,18 @@
+# Author: Yuxuan Wu
+
+project_dir: /home/wu/projects/scExtract
+init_config_ini: config.ini
+output_suffix: claude3
+
+debug: False
+applied_files: all
+
+# Step 1: Auto extract
+config_pkl: config.pkl
+log_file: auto_extract.log
+
+# Step 2: Add embedding
+AddEmbedding.user_dataset: 
+
+# Step 3: Integration
+method: scExtract
